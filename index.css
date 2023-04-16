@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap");
+/* Start Global Rules */
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+:root {
+  --background-color: #23242a;
+  --main-transition: 0.3s all ease-in-out;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+/* End Global Rules */
+.slider {
+  position: relative;
+  height: 20vh;
+  width: 35%;
+}
+.slider .slides {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: 15px;
+}
+.slider .slides::-webkit-scrollbar {
+  display: none;
+}
+.slider .slides .slide {
+  background: linear-gradient(to left, #28c3ea, #6dd5ed);
+  height: 100%;
+  flex: 0 0 32%;
+  color: #fff;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  border-radius: 30px;
+}
+@media (max-width: 991px) {
+  .slider .slides .slide {
+    flex: 0 0 100%;
+  }
+}
+.slider .buttons button {
+  font-size: 40px;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  color: #fefefe95;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+.slider .buttons button.left {
+  left: 10px;
+}
+.slider .buttons button.right {
+  right: 10px;
+}
+.slider .buttons button:hover {
+  color: #fff;
+}
